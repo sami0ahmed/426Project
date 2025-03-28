@@ -1,0 +1,28 @@
+
+
+.modal {
+    position: absolute;
+    width: 400px;
+    height: 600px;
+    margin-left: -150px;
+    top: 60px;
+    left: 50%;
+    background: #77acda;
+    border-radius: 10px;
+    border: 1px solid grey;
+    min-height: 300px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+    padding: 20px;
+  }
+
+.modalsignup{
+    background: #34a475;
+}
+  
+  .some {
+    box-sizing: 600px;
+    background: salmon;
+    padding: 20px;
+    margin: 10px;
+  }
+  
