@@ -1,17 +1,17 @@
-
 import './App.css'
-import Navbar from './Components/Navbar'
+import Navbar from './components/Navbar'
+import {EventProvider} from './context/eventContext'
+import EventPage from './pages/eventPage'
 
 function App() {
-
   return (
-    <>
-    <div>
-      <Navbar></Navbar>
-      <div className="container mx-auto py-8">
+    <EventProvider>
+      <div className="app">
+        <Navbar />
+        <div className="container mx-auto py-8">
+        </div>
       </div>
-    </div>
-    </>
+    </EventProvider>
   )
 }
 
