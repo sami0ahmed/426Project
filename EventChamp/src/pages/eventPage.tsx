@@ -1,7 +1,7 @@
 import { EventContext } from '../context/eventContext'
 import { useContext } from 'react'
-import { CreateEventButton } from '../components/createEventButton'
-import { EditEventButton } from '../components/editEventButton'
+import { CreateEventButton } from '../Components/createEventButton'
+import { EditEventButton } from '../Components/editEventButton'
 
 export default function EventPage() {
   const {createdEvents, registeredEvents, registerForEvent, unregisterFromEvent} = useContext(EventContext)!

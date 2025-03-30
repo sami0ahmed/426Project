@@ -1,5 +1,5 @@
 {
-  "name": "eventchamp",
+  "name": "426-branch",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -10,9 +10,12 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@tailwindcss/vite": "^4.0.17",
+    "lucide-react": "^0.485.0",
+    "motion": "^12.6.2",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "react-router-dom": "^7.4.1"
+    "tailwindcss": "^4.0.17"
   },
   "devDependencies": {
     "@eslint/js": "^9.21.0",
