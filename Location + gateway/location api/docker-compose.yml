@@ -1,0 +1,48 @@
+# This is a docker compose file for defining and running
+# multi-container environments. It simplifies the control
+# of your application stack into a single configuration
+# file. The following commands are useful:
+#
+#   docker compose up          - "runs" the entire system
+#   docker compose up --build  - force a build and "runs" system
+#   docker compose up -d       - "runs" system in detacted mode
+#   docker compose down        - "closes" the entire system and deletes everything
+#   docker compose stop        - stop running containers without removing them
+#   docker compose start       - start previously stopped containers
+#
+version: '3.9'
+name: ms-arch
+
+services:
+  registry:
+    build:
+      context: ./registry
+    container_name: registry
+    networks:
+      - skynet
+
+  service-location:
+    build:
+      context: ./service-location
+    container_name: service-location
+    depends_on:
+      - registry
+    networks:
+      - skynet
+
+
+  api-gateway:
+    build:
+      context: ./api-gateway
+    container_name: api-gateway
+    depends_on:
+      - service-location
+    networks:
+      - skynet
+    ports:
+      - "3000:3000"
+
+networks:
+  skynet:
+    driver: bridge
+
