@@ -30,6 +30,27 @@ services:
     networks:
       - skynet
 
+  service-event:
+    build:
+      context: ./service-event
+    container_name: service-event
+    depends_on:
+      - registry
+    networks:
+      - skynet
+    expose:
+      - "3000"
+
+  service-homepage:
+    build:
+      context: ./service-homepage
+    container_name: service-homepage
+    depends_on:
+      - registry
+    networks:
+      - skynet
+    expose:
+      - "3000"
 
   api-gateway:
     build:
@@ -37,6 +58,8 @@ services:
     container_name: api-gateway
     depends_on:
       - service-location
+      - service-event
+      - service-homepage
     networks:
       - skynet
     ports:
@@ -45,4 +68,3 @@ services:
 networks:
   skynet:
     driver: bridge
-
